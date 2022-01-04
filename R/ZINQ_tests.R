@@ -67,7 +67,7 @@ ZINQ_tests <- function(formula.logistic, formula.quantile, C, y_CorD="C", data, 
   mf.logistic = model.frame(formula.logistic, data=data)
   y = model.response(mf.logistic, "numeric")
   b = 1*(y != 0) ## v2: +ve -> non-zero
-  formula.logistic = update(formula.logistic, b ~ .)
+  formula.logistic = update.formula(formula.logistic, b ~ .)
   data.logistic = cbind(data, b)
   mf.logistic = model.frame(formula.logistic, data=data.logistic)
 
